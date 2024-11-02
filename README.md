@@ -2,6 +2,13 @@
 myversionofspechify
 
 
+## Concept of the App
+![image](./image.png)
+
+## Application Flow Diagram
+![imageflow](./imageflow.png)
+
+
 
 
 # MyVersionOfSpeechify
