@@ -65,5 +65,10 @@ MyVersionOfSpeechify is a web application built using Node.js and React that all
 
 
 
+## Application Screenshot
+![screenshot](./screenshot.png)
+
+
+
 
 
