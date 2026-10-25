@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyVersionOfSpeechify</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo-icon">🔊</div>
+        <div class="brand-text">
+          <h1>Speechify Studio</h1>
+          <span class="subtitle">AWS Polly Neural AI</span>
+        </div>
+      </div>
+      <div id="server-status" class="status-badge checking">
+        <span class="dot"></span>
+        <span id="status-text">Checking</span>
+      </div>
+    </header>
+
+    <!-- Controls Row -->
+    <div class="settings-grid">
+      <!-- Engine Toggle -->
+      <div class="control-group">
+        <label>Engine</label>
+        <div class="engine-pills">
+          <button id="engine-neural" class="pill active" data-engine="neural">✨ Neural</button>
+          <button id="engine-standard" class="pill" data-engine="standard">📻 Standard</button>
+        </div>
+      </div>
+
+      <!-- Voice Selector -->
+      <div class="control-group">
+        <label for="voice-select">Voice</label>
+        <select id="voice-select" class="select-input">
+          <option value="Joanna" selected>Joanna (US - Female)</option>
+          <option value="Matthew">Matthew (US - Male)</option>
+          <option value="Danielle">Danielle (US - Female)</option>
+          <option value="Stephen">Stephen (US - Male)</option>
+          <option value="Ruth">Ruth (US - Female)</option>
+          <option value="Gregory">Gregory (US - Male)</option>
+          <option value="Amy">Amy (UK - Female)</option>
+          <option value="Brian">Brian (UK - Male)</option>
+          <option value="Olivia">Olivia (AU - Female)</option>
+          <option value="Lupe">Lupe (ES - Female)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Code Mode Toggle -->
+    <div class="toggle-row">
+      <label class="toggle-label" for="code-mode">
+        <span>💻 Smart Code Reader</span>
+        <small>Translates operators, camelCase & syntax</small>
+      </label>
+      <input type="checkbox" id="code-mode" class="toggle-switch">
+    </div>
+
+    <!-- Text Input Area -->
+    <div class="input-section">
+      <div class="input-header">
+        <label for="text-input">Text or Code Snippet</label>
+        <button id="grab-selection-btn" class="text-action-btn" title="Grab selection from page">Grab Selection</button>
+      </div>
+      <textarea id="text-input" placeholder="Select text on the webpage or paste text/code here..." rows="4"></textarea>
+    </div>
+
+    <!-- Speed Buttons -->
+    <div class="speed-row">
+      <span class="speed-label">Speed:</span>
+      <div class="speed-pills">
+        <button class="speed-pill" data-speed="0.75">0.75x</button>
+        <button class="speed-pill active" data-speed="1.0">1.0x</button>
+        <button class="speed-pill" data-speed="1.25">1.25x</button>
+        <button class="speed-pill" data-speed="1.5">1.5x</button>
+        <button class="speed-pill" data-speed="2.0">2.0x</button>
+      </div>
+    </div>
+
+    <!-- Action Button -->
+    <button id="synthesize-btn" class="primary-btn">
+      <span id="btn-text">🎙️ Synthesize & Listen</span>
+    </button>
+
+    <!-- Audio Player Container -->
+    <div id="player-container" class="player-container hidden">
+      <div class="audio-meta">
+        <span id="player-voice">Joanna (Neural)</span>
+        <a id="download-link" href="#" download="speechify-output.mp3" class="download-btn">⬇ Download MP3</a>
+      </div>
+      <audio id="popup-audio" controls class="audio-player"></audio>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <button id="open-app-btn" class="secondary-btn">🚀 Open Full Studio App (localhost:3000)</button>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
